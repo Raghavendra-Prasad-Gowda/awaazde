@@ -21,11 +21,13 @@ public class TC_001 extends BaseClass {
 			homePageObjects.clickMoisturizers();
 			moisturizersObjects.clickOnleastExpensiveAloe();
 			moisturizersObjects.clickOnleastExpensiveAlmond();
+			moisturizersObjects.clickOnCartButton();
 
 		} else if (currentTemperatureValueFromWebsite > 34) {
 			homePageObjects.clickSunscreens();
 			sunScreensObjects.clickOnleastExpensiveSPF50();
 			sunScreensObjects.clickOnleastExpensiveSPF30();
+			sunScreensObjects.clickOnCartButton();
 
 		} else {
 			driver.close();

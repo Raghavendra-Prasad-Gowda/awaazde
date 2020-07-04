@@ -23,6 +23,9 @@ public class Moisturizers {
 	@FindAll(@FindBy(how = How.XPATH, using = "(//div[@class='text-center col-4'])/p[2]"))
 	private List<WebElement> priceListOfMoisturizers;
 
+	@FindBy(how = How.XPATH, using = "//button[@onclick='goToCart()']")
+	private WebElement cartButton;
+
 	public Moisturizers(WebDriver driver) {
 
 		this.driver = driver;
@@ -47,9 +50,7 @@ public class Moisturizers {
 
 		Integer a = v1.get(Collections.min(v1.keySet())) + 1;
 		String AddNumber = (a).toString();
-		System.out.println(a);
-		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" +
-		AddNumber + "]")).click();
+		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
 	}
 
 	public void clickOnleastExpensiveAlmond() {
@@ -67,10 +68,12 @@ public class Moisturizers {
 
 		Integer a = v2.get(Collections.min(v2.keySet())) + 1;
 		String AddNumber = (a).toString();
-		System.out.println(a);
 
-		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" +
-		AddNumber + "]")).click();
+		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
+	}
+
+	public void clickOnCartButton() {
+		cartButton.click();
 	}
 
 }

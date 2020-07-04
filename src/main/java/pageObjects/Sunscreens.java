@@ -23,6 +23,9 @@ public class Sunscreens {
 	@FindAll(@FindBy(how = How.XPATH, using = "(//div[@class='text-center col-4'])/p[2]"))
 	private List<WebElement> priceListOfSunscreens;
 
+	@FindBy(how = How.XPATH, using = "//button[@onclick='goToCart()']")
+	private WebElement cartButton;
+
 	public Sunscreens(WebDriver driver) {
 
 		this.driver = driver;
@@ -42,9 +45,8 @@ public class Sunscreens {
 				v3.put(Integer.parseInt(price[price.length - 1]), i);
 			}
 		}
-		Integer a=v3.get(Collections.min(v3.keySet()))+1;
+		Integer a = v3.get(Collections.min(v3.keySet())) + 1;
 		String AddNumber = (a).toString();
-		System.out.println(a);
 
 		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
 	}
@@ -62,11 +64,14 @@ public class Sunscreens {
 				v4.put(Integer.parseInt(price[price.length - 1]), i);
 			}
 		}
-		Integer a=v4.get(Collections.min(v4.keySet()))+1;
+		Integer a = v4.get(Collections.min(v4.keySet())) + 1;
 		String AddNumber = (a).toString();
-		System.out.println(a);
 
 		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
+	}
+
+	public void clickOnCartButton() {
+		cartButton.click();
 	}
 
 }
