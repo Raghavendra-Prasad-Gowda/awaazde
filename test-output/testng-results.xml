@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13530" started-at="2020-07-04T16:55:15Z" finished-at="2020-07-04T16:55:29Z">
+  <suite name="Default suite" duration-ms="10367" started-at="2020-07-04T18:27:58Z" finished-at="2020-07-04T18:28:09Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13530" started-at="2020-07-04T16:55:15Z" finished-at="2020-07-04T16:55:29Z">
+    <test name="Default test" duration-ms="10367" started-at="2020-07-04T18:27:58Z" finished-at="2020-07-04T18:28:09Z">
       <class name="testCases.TC_001">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.TC_001@2b98378d]" name="launchBrowser" is-config="true" duration-ms="9369" started-at="2020-07-04T16:55:15Z" finished-at="2020-07-04T16:55:25Z">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.TC_001@2b98378d]" name="launchBrowser" is-config="true" duration-ms="6815" started-at="2020-07-04T18:27:58Z" finished-at="2020-07-04T18:28:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="selectingProductBasedOnTemperature()[pri:0, instance:testCases.TC_001@2b98378d]" name="selectingProductBasedOnTemperature" duration-ms="4131" started-at="2020-07-04T16:55:25Z" finished-at="2020-07-04T16:55:29Z">
+        <test-method status="PASS" signature="selectingProductBasedOnTemperature()[pri:0, instance:testCases.TC_001@2b98378d]" name="selectingProductBasedOnTemperature" duration-ms="3514" started-at="2020-07-04T18:28:05Z" finished-at="2020-07-04T18:28:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectingProductBasedOnTemperature -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:testCases.TC_001@2b98378d]" name="closeBrowser" is-config="true" duration-ms="1" started-at="2020-07-04T16:55:29Z" finished-at="2020-07-04T16:55:29Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:testCases.TC_001@2b98378d]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2020-07-04T18:28:09Z" finished-at="2020-07-04T18:28:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

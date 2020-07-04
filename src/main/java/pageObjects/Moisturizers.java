@@ -1,9 +1,11 @@
 package pageObjects;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -27,9 +29,9 @@ public class Moisturizers {
 		PageFactory.initElements(driver, this);
 	}
 
-	public ArrayList<Integer> getleastExpensiveAloe() {
+	public void clickOnleastExpensiveAloe() {
 
-		ArrayList<Integer> aloeList = new ArrayList<Integer>();
+		HashMap<Integer, Integer> v1 = new HashMap<Integer, Integer>();
 
 		for (int i = 0; i < moisturizersNamesFromWebsite.size(); i++) {
 
@@ -37,25 +39,38 @@ public class Moisturizers {
 
 				String[] price = priceListOfMoisturizers.get(i).getText().split(" ");
 
-				aloeList.add(Integer.parseInt(price[price.length - 1]));
+				v1.put(Integer.parseInt(price[price.length - 1]), i);
 			}
 		}
 
-		return aloeList;
+		moisturizersNamesFromWebsite.get(v1.get(Collections.min(v1.keySet()))).click();
+
+		Integer a = v1.get(Collections.min(v1.keySet())) + 1;
+		String AddNumber = (a).toString();
+		System.out.println(a);
+		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" +
+		AddNumber + "]")).click();
 	}
 
-	public ArrayList<Integer> getleastExpensiveAlmond() {
-		ArrayList<Integer> almondList = new ArrayList<Integer>();
+	public void clickOnleastExpensiveAlmond() {
+
+		HashMap<Integer, Integer> v2 = new HashMap<Integer, Integer>();
+
 		for (int i = 0; i < moisturizersNamesFromWebsite.size(); i++) {
 
 			if (moisturizersNamesFromWebsite.get(i).getText().contains("almond")) {
 				String[] price = priceListOfMoisturizers.get(i).getText().split(" ");
 
-				almondList.add(Integer.parseInt(price[price.length - 1]));
+				v2.put(Integer.parseInt(price[price.length - 1]), i);
 			}
 		}
 
-		return almondList;
+		Integer a = v2.get(Collections.min(v2.keySet())) + 1;
+		String AddNumber = (a).toString();
+		System.out.println(a);
+
+		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" +
+		AddNumber + "]")).click();
 	}
 
 }

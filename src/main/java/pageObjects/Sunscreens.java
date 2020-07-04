@@ -1,8 +1,11 @@
 package pageObjects;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -11,12 +14,12 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class Sunscreens {
-	
+
 	private WebDriver driver;
 
 	@FindAll(@FindBy(how = How.XPATH, using = "//div[@class='text-center col-4']"))
 	private List<WebElement> sunScreensNamesFromWebsite;
-	
+
 	@FindAll(@FindBy(how = How.XPATH, using = "(//div[@class='text-center col-4'])/p[2]"))
 	private List<WebElement> priceListOfSunscreens;
 
@@ -25,41 +28,45 @@ public class Sunscreens {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	
-	public ArrayList<Integer> getleastExpensiveSPF50() {
 
-		ArrayList<Integer> SPF50List = new ArrayList<Integer>();
+	public void clickOnleastExpensiveSPF50() {
+
+		HashMap<Integer, Integer> v3 = new HashMap<Integer, Integer>();
 
 		for (int i = 0; i < sunScreensNamesFromWebsite.size(); i++) {
 
 			if (sunScreensNamesFromWebsite.get(i).getText().contains("SPF-50")) {
-				
+
 				String[] price = priceListOfSunscreens.get(i).getText().split(" ");
 
-				SPF50List.add(Integer.parseInt(price[price.length - 1]));
+				v3.put(Integer.parseInt(price[price.length - 1]), i);
 			}
 		}
+		Integer a=v3.get(Collections.min(v3.keySet()))+1;
+		String AddNumber = (a).toString();
+		System.out.println(a);
 
-		return SPF50List;
+		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
 	}
 
-	public ArrayList<Integer> getleastExpensiveSPF30() {
+	public void clickOnleastExpensiveSPF30() {
 
-		ArrayList<Integer> SPF30List = new ArrayList<Integer>();
+		HashMap<Integer, Integer> v4 = new HashMap<Integer, Integer>();
 
 		for (int i = 0; i < sunScreensNamesFromWebsite.size(); i++) {
 
 			if (sunScreensNamesFromWebsite.get(i).getText().contains("SPF-30")) {
-				
+
 				String[] price = priceListOfSunscreens.get(i).getText().split(" ");
 
-				SPF30List.add(Integer.parseInt(price[price.length - 1]));
+				v4.put(Integer.parseInt(price[price.length - 1]), i);
 			}
 		}
+		Integer a=v4.get(Collections.min(v4.keySet()))+1;
+		String AddNumber = (a).toString();
+		System.out.println(a);
 
-		return SPF30List;
+		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
 	}
-
 
 }
