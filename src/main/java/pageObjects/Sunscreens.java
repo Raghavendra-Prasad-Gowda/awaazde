@@ -27,30 +27,34 @@ public class Sunscreens {
 	}
 	
 	
-	public ArrayList<String> getleastExpensiveSPF50() {
+	public ArrayList<Integer> getleastExpensiveSPF50() {
 
-		ArrayList<String> SPF50List = new ArrayList<String>();
+		ArrayList<Integer> SPF50List = new ArrayList<Integer>();
 
 		for (int i = 0; i < sunScreensNamesFromWebsite.size(); i++) {
 
 			if (sunScreensNamesFromWebsite.get(i).getText().contains("SPF-50")) {
 				
-				SPF50List.add(priceListOfSunscreens.get(i).getText());
+				String[] price = priceListOfSunscreens.get(i).getText().split(" ");
+
+				SPF50List.add(Integer.parseInt(price[price.length - 1]));
 			}
 		}
 
 		return SPF50List;
 	}
 
-	public ArrayList<String> getleastExpensiveSPF30() {
+	public ArrayList<Integer> getleastExpensiveSPF30() {
 
-		ArrayList<String> SPF30List = new ArrayList<String>();
+		ArrayList<Integer> SPF30List = new ArrayList<Integer>();
 
 		for (int i = 0; i < sunScreensNamesFromWebsite.size(); i++) {
 
 			if (sunScreensNamesFromWebsite.get(i).getText().contains("SPF-30")) {
 				
-				SPF30List.add(priceListOfSunscreens.get(i).getText());
+				String[] price = priceListOfSunscreens.get(i).getText().split(" ");
+
+				SPF30List.add(Integer.parseInt(price[price.length - 1]));
 			}
 		}
 

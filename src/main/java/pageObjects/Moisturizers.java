@@ -17,10 +17,9 @@ public class Moisturizers {
 
 	@FindAll(@FindBy(how = How.XPATH, using = "//div[@class='text-center col-4']"))
 	private List<WebElement> moisturizersNamesFromWebsite;
-	
+
 	@FindAll(@FindBy(how = How.XPATH, using = "(//div[@class='text-center col-4'])/p[2]"))
 	private List<WebElement> priceListOfMoisturizers;
-	
 
 	public Moisturizers(WebDriver driver) {
 
@@ -28,27 +27,31 @@ public class Moisturizers {
 		PageFactory.initElements(driver, this);
 	}
 
-	public ArrayList<String> getleastExpensiveAloe() {
+	public ArrayList<Integer> getleastExpensiveAloe() {
 
-		ArrayList<String> aloeList = new ArrayList<String>();
+		ArrayList<Integer> aloeList = new ArrayList<Integer>();
 
 		for (int i = 0; i < moisturizersNamesFromWebsite.size(); i++) {
 
 			if (moisturizersNamesFromWebsite.get(i).getText().contains("Aloe")) {
-				
-				aloeList.add(priceListOfMoisturizers.get(i).getText());
+
+				String[] price = priceListOfMoisturizers.get(i).getText().split(" ");
+
+				aloeList.add(Integer.parseInt(price[price.length - 1]));
 			}
 		}
 
 		return aloeList;
 	}
 
-	public ArrayList<String> getleastExpensiveAlmond() {
-		ArrayList<String> almondList = new ArrayList<String>();
+	public ArrayList<Integer> getleastExpensiveAlmond() {
+		ArrayList<Integer> almondList = new ArrayList<Integer>();
 		for (int i = 0; i < moisturizersNamesFromWebsite.size(); i++) {
 
 			if (moisturizersNamesFromWebsite.get(i).getText().contains("almond")) {
-				almondList.add(priceListOfMoisturizers.get(i).getText());
+				String[] price = priceListOfMoisturizers.get(i).getText().split(" ");
+
+				almondList.add(Integer.parseInt(price[price.length - 1]));
 			}
 		}
 
