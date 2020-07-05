@@ -1,6 +1,5 @@
 package pageObjects;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -34,7 +33,7 @@ public class MoisturizersPageObjects {
 
 	public void clickOnleastExpensiveAloe() {
 
-		HashMap<Integer, Integer> v1 = new HashMap<Integer, Integer>();
+		HashMap<Integer, Integer> leastExpensiveAloe = new HashMap<Integer, Integer>();
 
 		for (int i = 0; i < moisturizersNamesFromWebsite.size(); i++) {
 
@@ -42,14 +41,12 @@ public class MoisturizersPageObjects {
 
 				String[] price = priceListOfMoisturizers.get(i).getText().split(" ");
 
-				v1.put(Integer.parseInt(price[price.length - 1]), i);
+				leastExpensiveAloe.put(Integer.parseInt(price[price.length - 1]), i);
 			}
 		}
 
-		
-		
-		if (!v1.isEmpty()) {
-			Integer a = v1.get(Collections.min(v1.keySet())) + 1;
+		if (!leastExpensiveAloe.isEmpty()) {
+			Integer a = leastExpensiveAloe.get(Collections.min(leastExpensiveAloe.keySet())) + 1;
 			String AddNumber = (a).toString();
 			driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
 		}
@@ -57,21 +54,19 @@ public class MoisturizersPageObjects {
 
 	public void clickOnleastExpensiveAlmond() {
 
-		HashMap<Integer, Integer> v2 = new HashMap<Integer, Integer>();
+		HashMap<Integer, Integer> leastExpensiveAlmond = new HashMap<Integer, Integer>();
 
 		for (int i = 0; i < moisturizersNamesFromWebsite.size(); i++) {
 
 			if (moisturizersNamesFromWebsite.get(i).getText().contains("almond")) {
 				String[] price = priceListOfMoisturizers.get(i).getText().split(" ");
 
-				v2.put(Integer.parseInt(price[price.length - 1]), i);
+				leastExpensiveAlmond.put(Integer.parseInt(price[price.length - 1]), i);
 			}
 		}
 
-		
-
-		if (!v2.isEmpty()) {
-			Integer a = v2.get(Collections.min(v2.keySet())) + 1;
+		if (!leastExpensiveAlmond.isEmpty()) {
+			Integer a = leastExpensiveAlmond.get(Collections.min(leastExpensiveAlmond.keySet())) + 1;
 			String AddNumber = (a).toString();
 			driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
 		}

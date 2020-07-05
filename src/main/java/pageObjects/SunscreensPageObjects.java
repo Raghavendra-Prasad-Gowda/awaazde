@@ -1,6 +1,5 @@
 package pageObjects;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -34,7 +33,7 @@ public class SunscreensPageObjects {
 
 	public void clickOnleastExpensiveSPF50() {
 
-		HashMap<Integer, Integer> v3 = new HashMap<Integer, Integer>();
+		HashMap<Integer, Integer> leastExpensiveSPF50 = new HashMap<Integer, Integer>();
 
 		for (int i = 0; i < sunScreensNamesFromWebsite.size(); i++) {
 
@@ -42,12 +41,12 @@ public class SunscreensPageObjects {
 
 				String[] price = priceListOfSunscreens.get(i).getText().split(" ");
 
-				v3.put(Integer.parseInt(price[price.length - 1]), i);
+				leastExpensiveSPF50.put(Integer.parseInt(price[price.length - 1]), i);
 			}
 		}
 
-		if (!v3.isEmpty()) {
-			Integer a = v3.get(Collections.min(v3.keySet())) + 1;
+		if (!leastExpensiveSPF50.isEmpty()) {
+			Integer a = leastExpensiveSPF50.get(Collections.min(leastExpensiveSPF50.keySet())) + 1;
 			String AddNumber = (a).toString();
 			driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
 		}
@@ -55,7 +54,7 @@ public class SunscreensPageObjects {
 
 	public void clickOnleastExpensiveSPF30() {
 
-		HashMap<Integer, Integer> v4 = new HashMap<Integer, Integer>();
+		HashMap<Integer, Integer> leastExpensiveSPF30 = new HashMap<Integer, Integer>();
 
 		for (int i = 0; i < sunScreensNamesFromWebsite.size(); i++) {
 
@@ -63,12 +62,12 @@ public class SunscreensPageObjects {
 
 				String[] price = priceListOfSunscreens.get(i).getText().split(" ");
 
-				v4.put(Integer.parseInt(price[price.length - 1]), i);
+				leastExpensiveSPF30.put(Integer.parseInt(price[price.length - 1]), i);
 			}
 		}
 
-		if (!v4.isEmpty()) {
-			Integer a = v4.get(Collections.min(v4.keySet())) + 1;
+		if (!leastExpensiveSPF30.isEmpty()) {
+			Integer a = leastExpensiveSPF30.get(Collections.min(leastExpensiveSPF30.keySet())) + 1;
 			String AddNumber = (a).toString();
 			driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
 		}

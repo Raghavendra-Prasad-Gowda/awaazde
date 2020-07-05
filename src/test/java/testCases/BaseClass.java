@@ -18,14 +18,11 @@ public class BaseClass {
 	protected static PageObjectManager pageObjectManager;
 	protected static PropertiesManager propertiesManager;
 
-	static {
-		propertiesManager = new PropertiesManager();
-	}
-
 	@BeforeClass
 	public static void launchBrowser() {
 		driver = WebDriverManager.getDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		propertiesManager = new PropertiesManager();
 		pageObjectManager = new PageObjectManager(driver);
 
 	}

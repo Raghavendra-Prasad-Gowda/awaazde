@@ -25,6 +25,7 @@ public class TC_001 extends BaseClass {
 			pageObjectManager.getMoisturizersPageObjects().clickOnleastExpensiveAlmond();
 			pageObjectManager.getMoisturizersPageObjects().clickOnCartButton();
 			pageObjectManager.getCheckoutPageObjects().clickPayWithCardButton();
+			
 			Thread.sleep(3000);
 			pageObjectManager.getPayWithCardFrameObjects().switchToPaymentFrame();
 			pageObjectManager.getPayWithCardFrameObjects().setEmailAddress(RandomString.make(10)+"@gmail.com");
