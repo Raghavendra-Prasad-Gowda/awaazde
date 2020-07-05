@@ -45,10 +45,12 @@ public class SunscreensPageObjects {
 				v3.put(Integer.parseInt(price[price.length - 1]), i);
 			}
 		}
-		Integer a = v3.get(Collections.min(v3.keySet())) + 1;
-		String AddNumber = (a).toString();
 
-		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
+		if (!v3.isEmpty()) {
+			Integer a = v3.get(Collections.min(v3.keySet())) + 1;
+			String AddNumber = (a).toString();
+			driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
+		}
 	}
 
 	public void clickOnleastExpensiveSPF30() {
@@ -64,10 +66,12 @@ public class SunscreensPageObjects {
 				v4.put(Integer.parseInt(price[price.length - 1]), i);
 			}
 		}
-		Integer a = v4.get(Collections.min(v4.keySet())) + 1;
-		String AddNumber = (a).toString();
 
-		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
+		if (!v4.isEmpty()) {
+			Integer a = v4.get(Collections.min(v4.keySet())) + 1;
+			String AddNumber = (a).toString();
+			driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
+		}
 	}
 
 	public void clickOnCartButton() {

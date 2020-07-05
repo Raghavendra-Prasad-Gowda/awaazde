@@ -1,48 +1,43 @@
 package testCases;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
-import configurations.ConfigurationProperties;
+import managers.PageObjectManager;
+import managers.PropertiesManager;
 import managers.WebDriverManager;
-import pageObjects.HomePageObjects;
-import pageObjects.MoisturizersPageObjects;
-import pageObjects.SunscreensPageObjects;
 
 public class BaseClass {
 
-	public static WebDriver driver;
-	public static ConfigurationProperties configProperties;
-	public static HomePageObjects homePageObjects;
-	public static MoisturizersPageObjects moisturizersObjects;
-	public static SunscreensPageObjects sunScreensObjects;
+	protected static WebDriver driver;
+	protected static PageObjectManager pageObjectManager;
+	protected static PropertiesManager propertiesManager;
 
 	static {
-		try {
-			configProperties = new ConfigurationProperties();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		propertiesManager = new PropertiesManager();
 	}
 
 	@BeforeClass
 	public static void launchBrowser() {
 		driver = WebDriverManager.getDriver();
-		homePageObjects = new HomePageObjects(driver);
-		moisturizersObjects = new MoisturizersPageObjects(driver);
-		sunScreensObjects = new SunscreensPageObjects(driver);
-		driver.get(configProperties.getAppURL());
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		pageObjectManager = new PageObjectManager(driver);
+
+	}
+
+	@Test(priority = 0)
+	public void navigateToHomePage() throws IOException {
+		driver.get(propertiesManager.getConfigurationProperties().getAppURL());
 	}
 
 	@AfterClass
 	public static void closeBrowser() {
-
-		driver.close();
-
+		//driver.close();
 	}
 
 }

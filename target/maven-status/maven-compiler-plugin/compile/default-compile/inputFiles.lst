@@ -1,5 +1,11 @@
+C:\Users\rragh\git\awaazde-automation-interview\src\main\java\pageObjects\CheckOutPageObjects.java
 C:\Users\rragh\git\awaazde-automation-interview\src\main\java\pageObjects\HomePageObjects.java
-C:\Users\rragh\git\awaazde-automation-interview\src\main\java\pageObjects\Moisturizers.java
-C:\Users\rragh\git\awaazde-automation-interview\src\main\java\pageObjects\Sunscreens.java
+C:\Users\rragh\git\awaazde-automation-interview\src\main\java\managers\PropertiesManager.java
+C:\Users\rragh\git\awaazde-automation-interview\src\main\java\pageObjects\SunscreensPageObjects.java
+C:\Users\rragh\git\awaazde-automation-interview\src\main\java\pageObjects\MoisturizersPageObjects.java
 C:\Users\rragh\git\awaazde-automation-interview\src\main\java\configurations\ConfigurationProperties.java
+C:\Users\rragh\git\awaazde-automation-interview\src\main\java\pageObjects\PaymentSuccessPageObjects.java
+C:\Users\rragh\git\awaazde-automation-interview\src\main\java\pageObjects\PayWithCardFrameObjects.java
+C:\Users\rragh\git\awaazde-automation-interview\src\main\java\managers\PageObjectManager.java
 C:\Users\rragh\git\awaazde-automation-interview\src\main\java\managers\WebDriverManager.java
+C:\Users\rragh\git\awaazde-automation-interview\src\main\java\pageObjects\Tester.java

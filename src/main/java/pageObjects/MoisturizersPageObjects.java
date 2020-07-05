@@ -46,11 +46,13 @@ public class MoisturizersPageObjects {
 			}
 		}
 
-		moisturizersNamesFromWebsite.get(v1.get(Collections.min(v1.keySet()))).click();
-
-		Integer a = v1.get(Collections.min(v1.keySet())) + 1;
-		String AddNumber = (a).toString();
-		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
+		
+		
+		if (!v1.isEmpty()) {
+			Integer a = v1.get(Collections.min(v1.keySet())) + 1;
+			String AddNumber = (a).toString();
+			driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
+		}
 	}
 
 	public void clickOnleastExpensiveAlmond() {
@@ -66,10 +68,13 @@ public class MoisturizersPageObjects {
 			}
 		}
 
-		Integer a = v2.get(Collections.min(v2.keySet())) + 1;
-		String AddNumber = (a).toString();
+		
 
-		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
+		if (!v2.isEmpty()) {
+			Integer a = v2.get(Collections.min(v2.keySet())) + 1;
+			String AddNumber = (a).toString();
+			driver.findElement(By.xpath("(//button[@class='btn btn-primary'])" + "[" + AddNumber + "]")).click();
+		}
 	}
 
 	public void clickOnCartButton() {

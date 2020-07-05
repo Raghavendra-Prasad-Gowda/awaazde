@@ -1,33 +1,71 @@
 package testCases;
 
+import java.util.Random;
+
 import org.testng.annotations.Test;
 
+import net.bytebuddy.utility.RandomString;
+import pageObjects.PayWithCardFrameObjects;
+
+
 public class TC_001 extends BaseClass {
+	
+	
+	@Test(priority = 1)
+	public static void selectingProductBasedOnTemperature() throws InterruptedException {
 
-	@Test(priority = 0)
-	public static void selectingProductBasedOnTemperature() {
-
-		String currentTemperature = homePageObjects.getCurrentTemperature();
-		String[] splittingCurrentTemperature = currentTemperature.split(" ");
+		String currentTemperatureWebpage = pageObjectManager.getHomePageObjects().getCurrentTemperature();
+		String[] splittingCurrentTemperature = currentTemperatureWebpage.split(" ");
 
 		int currentTemperatureValueFromWebsite = Integer.parseInt(splittingCurrentTemperature[0].trim());
 
 		if (currentTemperatureValueFromWebsite < 19) {
-			homePageObjects.clickMoisturizers();
-			moisturizersObjects.clickOnleastExpensiveAloe();
-			moisturizersObjects.clickOnleastExpensiveAlmond();
-			moisturizersObjects.clickOnCartButton();
+			pageObjectManager.getHomePageObjects().clickMoisturizers();
+			pageObjectManager.getMoisturizersPageObjects().clickOnleastExpensiveAloe();
+			pageObjectManager.getMoisturizersPageObjects().clickOnleastExpensiveAlmond();
+			pageObjectManager.getMoisturizersPageObjects().clickOnCartButton();
+			pageObjectManager.getCheckoutPageObjects().clickPayWithCardButton();
+			Thread.sleep(3000);
+			pageObjectManager.getPayWithCardFrameObjects().switchToPaymentFrame();
+			pageObjectManager.getPayWithCardFrameObjects().setEmailAddress(RandomString.make(10)+"@gmail.com");
+			pageObjectManager.getPayWithCardFrameObjects().setCardNumber("378282246310005");
+			pageObjectManager.getPayWithCardFrameObjects().set_3_Number_CVC("343");
+			pageObjectManager.getPayWithCardFrameObjects().setMonthYearIn_MM_YY_Format("08");
+			pageObjectManager.getPayWithCardFrameObjects().setMonthYearIn_MM_YY_Format("22");
+			pageObjectManager.getPayWithCardFrameObjects().setZipCode("571301");
+			
+			pageObjectManager.getPayWithCardFrameObjects().clickPayButton();
+			Thread.sleep(5000);
+			pageObjectManager.getPayWithCardFrameObjects().switchToDefaultPage();
+			
+			System.out.println("Payment "+pageObjectManager.getPaymentSuccessPageObjects().getPaymentStatusMessage());
 
 		} else if (currentTemperatureValueFromWebsite > 34) {
-			homePageObjects.clickSunscreens();
-			sunScreensObjects.clickOnleastExpensiveSPF50();
-			sunScreensObjects.clickOnleastExpensiveSPF30();
-			sunScreensObjects.clickOnCartButton();
+			pageObjectManager.getHomePageObjects().clickSunscreens();
+			pageObjectManager.getSunscreensPageObjects().clickOnleastExpensiveSPF50();
+			pageObjectManager.getSunscreensPageObjects().clickOnleastExpensiveSPF30();
+			pageObjectManager.getSunscreensPageObjects().clickOnCartButton();
+			pageObjectManager.getCheckoutPageObjects().clickPayWithCardButton();
+			
+			Thread.sleep(3000);
+			pageObjectManager.getPayWithCardFrameObjects().switchToPaymentFrame();
+			pageObjectManager.getPayWithCardFrameObjects().setEmailAddress(RandomString.make(10)+"@gmail.com");
+			pageObjectManager.getPayWithCardFrameObjects().setCardNumber("5105105105105100");
+			pageObjectManager.getPayWithCardFrameObjects().set_3_Number_CVC("343");
+			pageObjectManager.getPayWithCardFrameObjects().setMonthYearIn_MM_YY_Format("09");
+			pageObjectManager.getPayWithCardFrameObjects().setMonthYearIn_MM_YY_Format("23");
+			pageObjectManager.getPayWithCardFrameObjects().setZipCode("571301");
+			
+			pageObjectManager.getPayWithCardFrameObjects().clickPayButton();
+			Thread.sleep(5000);
+			pageObjectManager.getPayWithCardFrameObjects().switchToDefaultPage();
+			
+			System.out.println("Payment "+pageObjectManager.getPaymentSuccessPageObjects().getPaymentStatusMessage());
 
 		} else {
-			
+
 			driver.close();
-			
+
 		}
 	}
 

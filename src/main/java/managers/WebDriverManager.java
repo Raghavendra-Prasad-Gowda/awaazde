@@ -30,7 +30,7 @@ public class WebDriverManager {
 	}
 	
 		
-	public  static WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		
 		if(driver==null) {
 			driver=createDriver();
