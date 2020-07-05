@@ -13,7 +13,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class Sunscreens {
+public class SunscreensPageObjects {
 
 	private WebDriver driver;
 
@@ -26,7 +26,7 @@ public class Sunscreens {
 	@FindBy(how = How.XPATH, using = "//button[@onclick='goToCart()']")
 	private WebElement cartButton;
 
-	public Sunscreens(WebDriver driver) {
+	public SunscreensPageObjects(WebDriver driver) {
 
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

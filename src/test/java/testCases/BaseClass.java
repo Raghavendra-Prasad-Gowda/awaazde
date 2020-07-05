@@ -9,16 +9,16 @@ import org.testng.annotations.BeforeClass;
 import configurations.ConfigurationProperties;
 import managers.WebDriverManager;
 import pageObjects.HomePageObjects;
-import pageObjects.Moisturizers;
-import pageObjects.Sunscreens;
+import pageObjects.MoisturizersPageObjects;
+import pageObjects.SunscreensPageObjects;
 
 public class BaseClass {
 
 	public static WebDriver driver;
 	public static ConfigurationProperties configProperties;
 	public static HomePageObjects homePageObjects;
-	public static Moisturizers moisturizersObjects;
-	public static Sunscreens sunScreensObjects;
+	public static MoisturizersPageObjects moisturizersObjects;
+	public static SunscreensPageObjects sunScreensObjects;
 
 	static {
 		try {
@@ -33,8 +33,8 @@ public class BaseClass {
 	public static void launchBrowser() {
 		driver = WebDriverManager.getDriver();
 		homePageObjects = new HomePageObjects(driver);
-		moisturizersObjects = new Moisturizers(driver);
-		sunScreensObjects = new Sunscreens(driver);
+		moisturizersObjects = new MoisturizersPageObjects(driver);
+		sunScreensObjects = new SunscreensPageObjects(driver);
 		driver.get(configProperties.getAppURL());
 	}
 

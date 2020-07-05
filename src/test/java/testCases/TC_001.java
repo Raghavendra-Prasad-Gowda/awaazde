@@ -1,10 +1,5 @@
 package testCases;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-
 import org.testng.annotations.Test;
 
 public class TC_001 extends BaseClass {
@@ -30,6 +25,8 @@ public class TC_001 extends BaseClass {
 			sunScreensObjects.clickOnCartButton();
 
 		} else {
+			
+			driver.close();
 			
 		}
 	}
