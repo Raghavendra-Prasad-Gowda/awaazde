@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="18453" started-at="2020-07-05T16:41:19Z" finished-at="2020-07-05T16:41:38Z">
+  <suite name="Suite" duration-ms="23417" started-at="2020-07-05T16:55:43Z" finished-at="2020-07-05T16:56:07Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="18453" started-at="2020-07-05T16:41:19Z" finished-at="2020-07-05T16:41:38Z">
+    <test name="Test" duration-ms="23417" started-at="2020-07-05T16:55:43Z" finished-at="2020-07-05T16:56:07Z">
       <class name="testCases.TC_001">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.TC_001@2ef9b8bc]" name="launchBrowser" is-config="true" duration-ms="3957" started-at="2020-07-05T16:41:19Z" finished-at="2020-07-05T16:41:23Z">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.TC_001@2ef9b8bc]" name="launchBrowser" is-config="true" duration-ms="4181" started-at="2020-07-05T16:55:43Z" finished-at="2020-07-05T16:55:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="navigateToHomePage()[pri:0, instance:testCases.TC_001@2ef9b8bc]" name="navigateToHomePage" duration-ms="2772" started-at="2020-07-05T16:41:23Z" finished-at="2020-07-05T16:41:26Z">
+        <test-method status="PASS" signature="navigateToHomePage()[pri:0, instance:testCases.TC_001@2ef9b8bc]" name="navigateToHomePage" duration-ms="3391" started-at="2020-07-05T16:55:48Z" finished-at="2020-07-05T16:55:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToHomePage -->
-        <test-method status="PASS" signature="selectingProductBasedOnTemperature()[pri:1, instance:testCases.TC_001@2ef9b8bc]" name="selectingProductBasedOnTemperature" duration-ms="11703" started-at="2020-07-05T16:41:26Z" finished-at="2020-07-05T16:41:38Z">
+        <test-method status="PASS" signature="selectingProductBasedOnTemperature()[pri:1, instance:testCases.TC_001@2ef9b8bc]" name="selectingProductBasedOnTemperature" duration-ms="15766" started-at="2020-07-05T16:55:51Z" finished-at="2020-07-05T16:56:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectingProductBasedOnTemperature -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:testCases.TC_001@2ef9b8bc]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2020-07-05T16:41:38Z" finished-at="2020-07-05T16:41:38Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:testCases.TC_001@2ef9b8bc]" name="closeBrowser" is-config="true" duration-ms="58" started-at="2020-07-05T16:56:07Z" finished-at="2020-07-05T16:56:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
