@@ -30,7 +30,7 @@ public class TC_001 extends BaseClass {
 			sunScreensObjects.clickOnCartButton();
 
 		} else {
-			driver.close();
+			
 		}
 	}
 
